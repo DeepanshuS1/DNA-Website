@@ -179,8 +179,8 @@ This project is licensed under the MIT License.
 ## Contact
 
 For questions or support, please contact the DNA community at:
-- Email: hello@dnacommunity.dev
-- Phone: +1 (555) 123-4567
+- Email: DNA@dnacommunity.dev
+- Phone: +91 7355351255
 
 ---
 

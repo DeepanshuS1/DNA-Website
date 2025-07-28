@@ -177,58 +177,73 @@ const Resources = () => {
       const height = contentRef.current.scrollHeight;
       setContentHeight(height);
     }
-  }, [filteredResources, isExpanded]);
+  }, [filteredResources, isExpanded, viewMode]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.08,
+        delayChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 60, opacity: 0, scale: 0.8 },
+    hidden: { y: 80, opacity: 0, scale: 0.7, rotateX: -15 },
     visible: {
       y: 0,
       opacity: 1,
       scale: 1,
+      rotateX: 0,
       transition: { 
         type: "spring",
-        stiffness: 200,
-        damping: 20,
-        duration: 0.6
+        stiffness: 300,
+        damping: 25,
+        duration: 0.8,
+        ease: [0.25, 0.4, 0.25, 1]
       }
     }
   };
 
   const resourceVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 30 },
+    hidden: { 
+      opacity: 0, 
+      scale: 0.8, 
+      y: 60,
+      rotateX: -20,
+      rotateY: 5,
+      z: -100
+    },
     visible: { 
       opacity: 1, 
       scale: 1,
       y: 0,
+      rotateX: 0,
+      rotateY: 0,
+      z: 0,
       transition: { 
         type: "spring",
-        stiffness: 200,
-        damping: 25,
-        duration: 0.5
+        stiffness: 250,
+        damping: 20,
+        duration: 0.7,
+        ease: [0.25, 0.4, 0.25, 1]
       }
     },
     hover: {
-      y: -12,
-      scale: 1.05,
-      rotateX: 2,
-      rotateY: 1,
-      boxShadow: "0 25px 50px rgba(0,0,0,0.25)",
+      y: -15,
+      scale: 1.03,
+      rotateX: 5,
+      rotateY: 2,
+      z: 50,
+      boxShadow: "0 30px 60px rgba(0,0,0,0.15), 0 15px 35px rgba(52, 152, 219, 0.1)",
+      filter: "brightness(1.05)",
       transition: {
         type: "spring",
-        stiffness: 400,
-        damping: 25,
-        duration: 0.3
+        stiffness: 500,
+        damping: 30,
+        duration: 0.4
       }
     }
   };
@@ -240,16 +255,25 @@ const Resources = () => {
   };
 
   const statsVariants = {
-    hidden: { scale: 0.5, opacity: 0, rotateX: -90 },
+    hidden: { 
+      scale: 0.3, 
+      opacity: 0, 
+      rotateX: -90, 
+      y: 50,
+      filter: "blur(10px)"
+    },
     visible: {
       scale: 1,
       opacity: 1,
       rotateX: 0,
+      y: 0,
+      filter: "blur(0px)",
       transition: {
         type: "spring",
-        stiffness: 200,
-        damping: 20,
-        duration: 0.8
+        stiffness: 300,
+        damping: 25,
+        duration: 1.2,
+        ease: [0.25, 0.4, 0.25, 1]
       }
     }
   };
@@ -360,9 +384,16 @@ const Resources = () => {
                   className="stat-item"
                   variants={statsVariants}
                   whileHover={{ 
-                    scale: 1.1,
-                    y: -5,
-                    boxShadow: `0 10px 25px ${stat.color}30`
+                    scale: 1.15,
+                    y: -8,
+                    rotate: [0, -2, 2, 0],
+                    boxShadow: `0 15px 35px ${stat.color}40`,
+                    transition: {
+                      type: "spring",
+                      stiffness: 600,
+                      damping: 20,
+                      duration: 0.3
+                    }
                   }}
                 >
                   <div 
@@ -504,9 +535,16 @@ const Resources = () => {
           {/* Modern Resources Explorer Container */}
           <motion.div 
             className="resources-explorer"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            initial={{ opacity: 0, y: 50, scale: 0.95, rotateX: -10 }}
+            animate={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+            transition={{ 
+              delay: 0.4, 
+              duration: 0.8,
+              type: "spring",
+              stiffness: 200,
+              damping: 25,
+              ease: [0.25, 0.4, 0.25, 1]
+            }}
           >
             {/* Explorer Header with Controls */}
             <div className="explorer-header">
@@ -570,31 +608,34 @@ const Resources = () => {
               className={`resources-display ${viewMode} ${isExpanded ? 'expanded' : 'collapsed'}`}
               initial={{ maxHeight: 700 }}
               animate={{ 
-                maxHeight: isExpanded ? Math.max(contentHeight || 700, 1000) : 700
+                maxHeight: isExpanded ? 10000 : 700
               }}
               transition={{ 
                 duration: 0.8,
                 ease: [0.4, 0, 0.2, 1]
               }}
+              style={{
+                overflowY: isExpanded ? 'visible' : 'auto',
+                overflowX: 'hidden',
+                height: isExpanded ? 'auto' : undefined
+              }}
             >
               <div className={`resources-grid-wrapper ${viewMode}`} ref={contentRef}>
-                <AnimatePresence mode="popLayout">
-                  {filteredResources.length > 0 ? (
-                    (isExpanded ? filteredResources : filteredResources.slice(0, showPreview))
-                      .map((resource, index) => {
+                {filteredResources.length > 0 ? (
+                  (isExpanded ? filteredResources : filteredResources.slice(0, showPreview))
+                    .map((resource, index) => {
                         const ResourceIcon = resource.icon;
                         return (
                           <motion.div
-                            key={`${resource.title}-${index}`}
+                            key={`${resource.title}-${resource.category}-${index}`}
                             className={`resource-card ${viewMode}`}
                             variants={resourceVariants}
-                            initial="hidden"
+                            initial={isExpanded ? "visible" : "hidden"}
                             animate="visible"
                             exit="hidden"
                             whileHover="hover"
                             whileTap={{ scale: 0.98 }}
                             onClick={() => handleResourceClick(resource)}
-                            layoutId={resource.title}
                             layout
                           >
                             {/* Terminal-style header */}
@@ -762,11 +803,10 @@ const Resources = () => {
                       </motion.button>
                     </motion.div>
                   )}
-                </AnimatePresence>
               </div>
 
               {/* Gradient overlay for collapsed view */}
-              {!isExpanded && filteredResources.length > showPreview && (
+              {false && !isExpanded && filteredResources.length > showPreview && (
                 <motion.div 
                   className="view-more-overlay"
                   initial={{ opacity: 0 }}

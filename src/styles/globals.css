@@ -2849,19 +2849,31 @@ html {
   position: relative;
   overflow: hidden;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(52, 152, 219, 0.1);
 }
 
 .resources-display.collapsed {
   overflow-y: auto;
+  max-height: 700px;
 }
 
 .resources-display.expanded {
-  overflow: visible;
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  min-height: auto !important;
 }
 
 .resources-grid-wrapper {
   padding: 32px;
   min-height: 400px;
+}
+
+.resources-display.expanded .resources-grid-wrapper {
+  min-height: auto;
 }
 
 .resources-grid-wrapper.grid {
@@ -3057,23 +3069,53 @@ html {
 
 /* Custom Scrollbar for Display Area */
 .resources-display::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 .resources-display::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  margin: 10px;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 12px;
+  margin: 8px 0;
+  border: 1px solid rgba(52, 152, 219, 0.1);
 }
 
 .resources-display::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #61dafb, #4fd1c7);
-  border-radius: 10px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, 
+    rgba(52, 152, 219, 0.8) 0%, 
+    rgba(155, 89, 182, 0.8) 50%, 
+    rgba(52, 73, 94, 0.8) 100%);
+  border-radius: 12px;
+  border: 2px solid rgba(15, 23, 42, 0.5);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 2px 8px rgba(52, 152, 219, 0.2);
 }
 
 .resources-display::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #4fd1c7, #38b2ac);
+  background: linear-gradient(135deg, 
+    rgba(52, 152, 219, 1) 0%, 
+    rgba(155, 89, 182, 1) 50%, 
+    rgba(52, 73, 94, 1) 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+.resources-display::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(135deg, 
+    rgba(41, 128, 185, 1) 0%, 
+    rgba(142, 68, 173, 1) 50%, 
+    rgba(44, 62, 80, 1) 100%);
+}
+
+.resources-display::-webkit-scrollbar-corner {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+/* Firefox scrollbar support */
+.resources-display {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(52, 152, 219, 0.8) rgba(15, 23, 42, 0.8);
 }
 
 /* Responsive Styles for Resources Explorer */

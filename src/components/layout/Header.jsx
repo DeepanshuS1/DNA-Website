@@ -96,7 +96,20 @@ const Header = () => {
             onClick={() => scrollToSection('home')}
             aria-label="DNA Community - Home"
           >
-            <img src={isScrolledPastHome ? logoLight : logoDark} alt="DNA Community Logo" />
+            <div className="logo-container">
+              <motion.img 
+                key={isScrolledPastHome ? 'light' : 'dark'}
+                src={isScrolledPastHome ? logoLight : logoDark} 
+                alt="DNA Community Logo"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ 
+                  duration: 0.3, 
+                  ease: "easeInOut" 
+                }}
+              />
+            </div>
           </motion.a>
           <ul className={`nav-links ${isMenuOpen ? 'nav-links-mobile' : ''}`}>
             {['Home', 'About', 'Team', 'Resources', 'Events', 'Contact'].map((item, index) => (

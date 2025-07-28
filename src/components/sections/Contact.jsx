@@ -49,7 +49,7 @@ const Contact = () => {
       return;
     }
 
-    console.log('Form submitted:', formData);
+    // TODO: Integrate with actual backend API
     showNotification('Thank you for your message! We\'ll get back to you soon.', 'success');
     
     setFormData({

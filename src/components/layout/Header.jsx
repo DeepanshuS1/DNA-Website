@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Bars3Icon, 
-  XMarkIcon, 
-  CodeBracketIcon, 
-  UserCircleIcon,
-  ArrowRightOnRectangleIcon 
-} from '@heroicons/react/24/outline';
+  Menu, 
+  X, 
+  Code, 
+  User,
+  LogOut 
+} from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { openAuthModal } from '../auth/AuthModal';
@@ -58,7 +58,7 @@ const Header = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur-sm opacity-50"></div>
               <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-xl">
-                <CodeBracketIcon className="w-6 h-6 text-white" />
+                <Code className="w-6 h-6 text-white" />
               </div>
             </div>
             <div className="hidden sm:block">
@@ -102,7 +102,7 @@ const Header = () => {
               {isAuthenticated ? (
                 <div className="flex items-center space-x-3">
                   <div className="flex items-center space-x-2 text-sm">
-                    <UserCircleIcon className="w-5 h-5 text-gray-500" />
+                    <User className="w-5 h-5 text-gray-500" />
                     <span className="text-gray-700 dark:text-gray-300">
                       {user?.full_name || user?.email}
                     </span>
@@ -112,7 +112,7 @@ const Header = () => {
                     size="sm"
                     onClick={() => handleAuthAction('logout')}
                   >
-                    <ArrowRightOnRectangleIcon className="w-4 h-4 mr-1" />
+                    <LogOut className="w-4 h-4 mr-1" />
                     Logout
                   </Button>
                 </div>
@@ -145,7 +145,7 @@ const Header = () => {
               transition={{ duration: 0.5 }}
               aria-label="Toggle mobile menu"
             >
-              {isMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </motion.button>
           </div>
         </div>
@@ -181,7 +181,7 @@ const Header = () => {
               {isAuthenticated ? (
                 <>
                   <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
-                    <UserCircleIcon className="w-5 h-5" />
+                    <User className="w-5 h-5" />
                     <span>{user?.full_name || user?.email}</span>
                   </div>
                   <Button
@@ -190,7 +190,7 @@ const Header = () => {
                     onClick={() => handleAuthAction('logout')}
                     className="w-full"
                   >
-                    <ArrowRightOnRectangleIcon className="w-4 h-4 mr-2" />
+                    <LogOut className="w-4 h-4 mr-2" />
                     Logout
                   </Button>
                 </>

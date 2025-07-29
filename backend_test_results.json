@@ -1,0 +1,387 @@
+{
+  "total_tests": 40,
+  "passed_tests": 34,
+  "failed_tests": 6,
+  "success_rate": 85.0,
+  "duration": 3.0132851600646973,
+  "results": [
+    {
+      "test": "Health Check",
+      "success": true,
+      "message": "API is healthy",
+      "details": null,
+      "timestamp": "2025-07-29T10:47:58.785647"
+    },
+    {
+      "test": "Root Endpoint",
+      "success": true,
+      "message": "Root API accessible",
+      "details": null,
+      "timestamp": "2025-07-29T10:47:58.828274"
+    },
+    {
+      "test": "API Documentation",
+      "success": true,
+      "message": "Docs endpoint accessible",
+      "details": null,
+      "timestamp": "2025-07-29T10:47:58.831075"
+    },
+    {
+      "test": "User Registration",
+      "success": true,
+      "message": "User registered successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:47:59.142286"
+    },
+    {
+      "test": "Admin Registration",
+      "success": true,
+      "message": "Admin registered successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:47:59.416247"
+    },
+    {
+      "test": "Duplicate Registration Prevention",
+      "success": true,
+      "message": "Correctly prevented duplicate registration",
+      "details": null,
+      "timestamp": "2025-07-29T10:47:59.460224"
+    },
+    {
+      "test": "User Login",
+      "success": true,
+      "message": "User login successful",
+      "details": null,
+      "timestamp": "2025-07-29T10:47:59.733280"
+    },
+    {
+      "test": "Admin Login",
+      "success": true,
+      "message": "Admin login successful",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.007271"
+    },
+    {
+      "test": "Invalid Login Prevention",
+      "success": true,
+      "message": "Correctly rejected invalid credentials",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.279224"
+    },
+    {
+      "test": "Current User Info",
+      "success": true,
+      "message": "Retrieved current user info",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.364262"
+    },
+    {
+      "test": "Token Refresh",
+      "success": true,
+      "message": "Token refreshed successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.408275"
+    },
+    {
+      "test": "Protected Endpoint Security",
+      "success": false,
+      "message": "Expected 401, got 403",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.450272"
+    },
+    {
+      "test": "Get Users List",
+      "success": true,
+      "message": "Retrieved 2 users",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.497299"
+    },
+    {
+      "test": "Get User by ID",
+      "success": false,
+      "message": "Incorrect user returned",
+      "details": {
+        "email": "testuser1753786078@dnadev.com",
+        "full_name": "John Developer",
+        "username": "johndev1753786078",
+        "bio": "Full-stack developer passionate about technology",
+        "avatar_url": null,
+        "github_profile": "https://github.com/johndev",
+        "linkedin_profile": "https://linkedin.com/in/johndev",
+        "skills": [
+          "Python",
+          "JavaScript",
+          "React",
+          "FastAPI"
+        ],
+        "is_active": true,
+        "role": "member",
+        "_id": "e01e0cc3-ac26-4dcc-a132-3f13c9d6a457",
+        "created_at": "2025-07-29T10:48:00.499911",
+        "updated_at": "2025-07-29T10:48:00.499913"
+      },
+      "timestamp": "2025-07-29T10:48:00.541263"
+    },
+    {
+      "test": "Update User Profile",
+      "success": true,
+      "message": "Profile updated successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.589269"
+    },
+    {
+      "test": "User Statistics",
+      "success": true,
+      "message": "Total users: 2",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.634324"
+    },
+    {
+      "test": "Search Users",
+      "success": true,
+      "message": "Search returned 1 results",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.681317"
+    },
+    {
+      "test": "Create Event",
+      "success": false,
+      "message": "Missing event ID in response",
+      "details": {
+        "title": "Python Web Development Workshop",
+        "description": "Learn modern web development with Python and FastAPI",
+        "event_type": "workshop",
+        "start_date": "2025-08-05T10:48:00.681375",
+        "end_date": "2025-08-05T14:48:00.681382",
+        "location": "DNA Community Center",
+        "is_online": false,
+        "max_participants": 50,
+        "registration_deadline": "2025-08-03T10:48:00.681387",
+        "tags": [
+          "python",
+          "web-development",
+          "fastapi"
+        ],
+        "image_url": null,
+        "requirements": [
+          "Basic Python knowledge",
+          "Laptop with Python installed"
+        ],
+        "agenda": [
+          {
+            "time": "09:00",
+            "topic": "Introduction to FastAPI"
+          },
+          {
+            "time": "10:30",
+            "topic": "Building REST APIs"
+          },
+          {
+            "time": "12:00",
+            "topic": "Database Integration"
+          }
+        ],
+        "status": "upcoming",
+        "_id": "f0226241-11c9-4701-b956-2ea1cf6fe91b",
+        "created_by": "fd17f6cc-6af8-4246-935f-7f4f6ea1db3a",
+        "created_at": "2025-07-29T10:48:00.686084",
+        "updated_at": "2025-07-29T10:48:00.686085",
+        "participant_count": 0
+      },
+      "timestamp": "2025-07-29T10:48:00.739308"
+    },
+    {
+      "test": "Event Creation Authorization",
+      "success": true,
+      "message": "Correctly prevented non-admin from creating events",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.785293"
+    },
+    {
+      "test": "Get Events List",
+      "success": true,
+      "message": "Retrieved 1 events",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.830329"
+    },
+    {
+      "test": "Event Filtering",
+      "success": true,
+      "message": "Filtered events returned 1 results",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.875334"
+    },
+    {
+      "test": "Create Blog Post",
+      "success": false,
+      "message": "Missing blog post ID in response",
+      "details": {
+        "title": "Getting Started with FastAPI and MongoDB",
+        "content": "FastAPI is a modern, fast web framework for building APIs with Python 3.6+ based on standard Python type hints...",
+        "excerpt": "Learn how to build modern APIs with FastAPI and MongoDB",
+        "featured_image": "https://example.com/fastapi-blog.jpg",
+        "tags": [
+          "fastapi",
+          "python",
+          "mongodb",
+          "tutorial"
+        ],
+        "is_published": true,
+        "is_featured": false,
+        "_id": "553ddeaf-f472-4bab-ae0d-4c08e8a8c97e",
+        "author_id": "fd17f6cc-6af8-4246-935f-7f4f6ea1db3a",
+        "created_at": "2025-07-29T10:48:00.880313",
+        "updated_at": "2025-07-29T10:48:00.880314",
+        "view_count": 0
+      },
+      "timestamp": "2025-07-29T10:48:00.934283"
+    },
+    {
+      "test": "Blog Creation Authorization",
+      "success": true,
+      "message": "Correctly prevented non-admin from creating blog posts",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:00.980277"
+    },
+    {
+      "test": "Get Blog Posts",
+      "success": true,
+      "message": "Retrieved 1 blog posts",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.025337"
+    },
+    {
+      "test": "Blog Statistics",
+      "success": true,
+      "message": "Total posts: 1, Published: 1",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.071254"
+    },
+    {
+      "test": "Blog Filtering",
+      "success": true,
+      "message": "Filtered blog posts returned 0 results",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.116263"
+    },
+    {
+      "test": "Newsletter Subscription",
+      "success": true,
+      "message": "Newsletter subscription successful",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.182240"
+    },
+    {
+      "test": "Duplicate Subscription Prevention",
+      "success": true,
+      "message": "Correctly prevented duplicate subscription",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.227242"
+    },
+    {
+      "test": "Newsletter Unsubscribe",
+      "success": false,
+      "message": "Status code: 422",
+      "details": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"query\",\"email\"],\"msg\":\"Field required\",\"input\":null,\"url\":\"https://errors.pydantic.dev/2.5/v/missing\"}]}",
+      "timestamp": "2025-07-29T10:48:01.269232"
+    },
+    {
+      "test": "Get Newsletter Subscribers",
+      "success": true,
+      "message": "Retrieved 1 subscribers",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.314250"
+    },
+    {
+      "test": "Newsletter Statistics",
+      "success": true,
+      "message": "Total: 1, Active: 1",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.361242"
+    },
+    {
+      "test": "Create Project",
+      "success": false,
+      "message": "Missing project ID in response",
+      "details": {
+        "title": "DNA Community Website",
+        "description": "A modern community website built with React and FastAPI",
+        "github_url": "https://github.com/dna-community/website",
+        "demo_url": "https://dna-community.dev",
+        "image_url": "https://example.com/project-image.jpg",
+        "technologies": [
+          "React",
+          "FastAPI",
+          "MongoDB",
+          "Tailwind CSS"
+        ],
+        "contributors": [
+          "e01e0cc3-ac26-4dcc-a132-3f13c9d6a457"
+        ],
+        "status": "active",
+        "featured": true,
+        "_id": "6ca4da38-222c-4e51-ab71-556cd30f6cbc",
+        "created_by": "e01e0cc3-ac26-4dcc-a132-3f13c9d6a457",
+        "created_at": "2025-07-29T10:48:01.366145",
+        "updated_at": "2025-07-29T10:48:01.366146"
+      },
+      "timestamp": "2025-07-29T10:48:01.419289"
+    },
+    {
+      "test": "Get Projects",
+      "success": true,
+      "message": "Retrieved 1 projects",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.464335"
+    },
+    {
+      "test": "Get Featured Projects",
+      "success": true,
+      "message": "Retrieved 1 featured projects",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.508308"
+    },
+    {
+      "test": "Project Statistics",
+      "success": true,
+      "message": "Total: 1, Active: 1",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.555295"
+    },
+    {
+      "test": "Project Filtering",
+      "success": true,
+      "message": "Filtered projects returned 1 results",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.600322"
+    },
+    {
+      "test": "Create Contact Message",
+      "success": true,
+      "message": "Contact message sent successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.656291"
+    },
+    {
+      "test": "Get Contact Messages",
+      "success": true,
+      "message": "Retrieved 1 contact messages",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.703421"
+    },
+    {
+      "test": "Contact Statistics",
+      "success": true,
+      "message": "Total: 1, Unread: 1",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.749297"
+    },
+    {
+      "test": "Contact Admin Authorization",
+      "success": true,
+      "message": "Correctly prevented non-admin access",
+      "details": null,
+      "timestamp": "2025-07-29T10:48:01.794316"
+    }
+  ]
+}

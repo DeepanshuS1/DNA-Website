@@ -438,8 +438,8 @@ class DNABackendTester:
                 response = self.make_request("POST", f"/events/{event_id}/rsvp", rsvp_data, use_auth=True)
                 if response.status_code == 200:
                     data = response.json()
-                    if "id" in data:
-                        rsvp_id = data["id"]
+                    if "_id" in data or "id" in data:
+                        rsvp_id = data.get("_id") or data.get("id")
                         self.log_test("Create RSVP", True, "RSVP created successfully")
                     else:
                         self.log_test("Create RSVP", False, "Missing RSVP ID in response", data)

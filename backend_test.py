@@ -551,8 +551,8 @@ class DNABackendTester:
             response = self.make_request("POST", "/blog", blog_data, admin_auth=True)
             if response.status_code == 200:
                 data = response.json()
-                if "id" in data:
-                    blog_post_id = data["id"]
+                if "_id" in data or "id" in data:
+                    blog_post_id = data.get("_id") or data.get("id")
                     self.log_test("Create Blog Post", True, "Blog post created successfully")
                 else:
                     self.log_test("Create Blog Post", False, "Missing blog post ID in response", data)

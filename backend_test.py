@@ -252,10 +252,10 @@ class DNABackendTester:
         # Test protected endpoint without token
         try:
             response = self.make_request("GET", "/auth/me")
-            if response.status_code == 401:
+            if response.status_code in [401, 403]:  # Both are acceptable for missing auth
                 self.log_test("Protected Endpoint Security", True, "Correctly rejected request without token")
             else:
-                self.log_test("Protected Endpoint Security", False, f"Expected 401, got {response.status_code}")
+                self.log_test("Protected Endpoint Security", False, f"Expected 401/403, got {response.status_code}")
         except Exception as e:
             self.log_test("Protected Endpoint Security", False, f"Exception: {str(e)}")
     

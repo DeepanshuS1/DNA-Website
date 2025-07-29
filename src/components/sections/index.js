@@ -8,3 +8,4 @@ export { default as Events } from './Events.jsx';
 export { default as Resources } from './Resources.jsx';
 export { default as Blog } from './Blog.jsx';
 export { default as Contact } from './Contact.jsx';
+export { default as Newsletter } from './Newsletter';

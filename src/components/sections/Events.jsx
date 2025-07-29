@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Clock, MapPin, Users, Calendar, Zap, Code, GraduationCap, UserGroup, Smartphone, Cloud } from 'lucide-react';
+import { Clock, MapPin, Users, Calendar, Zap, Code, GraduationCap, Group as UserGroup, Smartphone, Cloud } from 'lucide-react';
 import RSVPModal from '../ui/RSVPModal';
 
 const Events = () => {

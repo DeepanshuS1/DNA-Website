@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { EnvelopeIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { Mail, Sparkles } from 'lucide-react';
 import { newsletterAPI } from '../../services/api';
 import Button from '../ui/Button';
 import Card from '../ui/Card';
@@ -63,7 +63,7 @@ const Newsletter = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-lg opacity-30 animate-pulse"></div>
               <div className="relative bg-gradient-to-r from-blue-500 to-purple-600 p-4 rounded-full">
-                <EnvelopeIcon className="w-8 h-8 text-white" />
+                <Mail className="w-8 h-8 text-white" />
               </div>
             </div>
           </motion.div>
@@ -103,7 +103,7 @@ const Newsletter = () => {
                     loading={loading}
                     className="sm:px-8"
                   >
-                    <SparklesIcon className="w-5 h-5 mr-2" />
+                    <Sparkles className="w-5 h-5 mr-2" />
                     Subscribe
                   </Button>
                 </div>

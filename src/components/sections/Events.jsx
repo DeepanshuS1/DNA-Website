@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiClock, FiMapPin, FiUsers, FiCalendar } from 'react-icons/fi';
-import { HiOutlineLightningBolt, HiOutlineCode, HiOutlineAcademicCap, HiOutlineUserGroup, HiOutlineDeviceMobile, HiOutlineCloud } from 'react-icons/hi';
+import { Clock, MapPin, Users, Calendar, Zap, Code, GraduationCap, Group as UserGroup, Smartphone, Cloud } from 'lucide-react';
+import RSVPModal from '../ui/RSVPModal';
 
 const Events = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [isRSVPModalOpen, setIsRSVPModalOpen] = useState(false);
   const [notification, setNotification] = useState({
     show: false,
     message: '',
@@ -27,13 +29,8 @@ const Events = () => {
   };
 
   const handleEventRegistration = (event) => {
-    if (event.registrationLink && event.registrationLink !== '#') {
-      window.open(event.registrationLink, '_blank', 'noopener,noreferrer');
-      showNotification('Redirecting to registration...', 'success');
-    } else {
-      // Show custom notification instead of alert
-      showNotification('Registration link will be available soon! Stay tuned for updates.', 'info');
-    }
+    setSelectedEvent(event);
+    setIsRSVPModalOpen(true);
   };
 
   const showNotification = (message, type = 'info') => {
@@ -61,7 +58,7 @@ const events = [
         location: 'Online & ZOOM',
         category: 'Workshop',
         spots: 200,
-        icon: HiOutlineCode,
+        icon: Code,
         color: '#1abc9c',
         isOngoing: false,
         registrationLink: 'https://chat.whatsapp.com/JlJ92kKgCIJGyL8ky8J86A?mode=r_t'
@@ -74,7 +71,7 @@ const events = [
         location: 'Tech Hub Downtown',
         category: 'Hackathon',
         spots: 50,
-        icon: HiOutlineLightningBolt,
+        icon: Zap,
         color: '#e74c3c',
         registrationLink: '#'
     },
@@ -86,7 +83,7 @@ const events = [
         location: 'DNA Community Center',
         category: 'Bootcamp',
         spots: 30,
-        icon: HiOutlineAcademicCap,
+        icon: GraduationCap,
         color: '#3498db',
         registrationLink: '#'
     },
@@ -269,9 +266,9 @@ const events = [
                   <h3>{event.title}</h3>
                   <p>{event.description}</p>
                   <div className="event-meta">
-                    <span><FiClock size={16} /> {event.time}</span>
-                    <span><FiMapPin size={16} /> {event.location}</span>
-                    <span><FiUsers size={16} /> {event.spots} spots</span>
+                    <span><Clock size={16} /> {event.time}</span>
+                    <span><MapPin size={16} /> {event.location}</span>
+                    <span><Users size={16} /> {event.spots} spots</span>
                   </div>
                   <motion.button 
                     className="event-register-btn" 
@@ -293,6 +290,12 @@ const events = [
         </motion.div>
       </div>
     </section>
+    
+    <RSVPModal
+      isOpen={isRSVPModalOpen}
+      onClose={() => setIsRSVPModalOpen(false)}
+      event={selectedEvent}
+    />
     </div>
     </>
   );

@@ -1,0 +1,366 @@
+{
+  "total_tests": 51,
+  "passed_tests": 51,
+  "failed_tests": 0,
+  "success_rate": 100.0,
+  "duration": 3.3677706718444824,
+  "results": [
+    {
+      "test": "Health Check",
+      "success": true,
+      "message": "API is healthy",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:47.441093"
+    },
+    {
+      "test": "Root Endpoint",
+      "success": true,
+      "message": "Root API accessible",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:47.483267"
+    },
+    {
+      "test": "API Documentation",
+      "success": true,
+      "message": "Docs endpoint accessible",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:47.485646"
+    },
+    {
+      "test": "User Registration",
+      "success": true,
+      "message": "User registered successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:47.758252"
+    },
+    {
+      "test": "Admin Registration",
+      "success": true,
+      "message": "Admin registered successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:48.031278"
+    },
+    {
+      "test": "Duplicate Registration Prevention",
+      "success": true,
+      "message": "Correctly prevented duplicate registration",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:48.075260"
+    },
+    {
+      "test": "User Login",
+      "success": true,
+      "message": "User login successful",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:48.348300"
+    },
+    {
+      "test": "Admin Login",
+      "success": true,
+      "message": "Admin login successful",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:48.620298"
+    },
+    {
+      "test": "Invalid Login Prevention",
+      "success": true,
+      "message": "Correctly rejected invalid credentials",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:48.891233"
+    },
+    {
+      "test": "Current User Info",
+      "success": true,
+      "message": "Retrieved current user info",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:48.935253"
+    },
+    {
+      "test": "Token Refresh",
+      "success": true,
+      "message": "Token refreshed successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:48.979263"
+    },
+    {
+      "test": "Protected Endpoint Security",
+      "success": true,
+      "message": "Correctly rejected request without token",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.021286"
+    },
+    {
+      "test": "Get Users List",
+      "success": true,
+      "message": "Retrieved 4 users",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.068332"
+    },
+    {
+      "test": "Get User by ID",
+      "success": true,
+      "message": "Retrieved user by ID",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.111310"
+    },
+    {
+      "test": "Update User Profile",
+      "success": true,
+      "message": "Profile updated successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.157253"
+    },
+    {
+      "test": "User Statistics",
+      "success": true,
+      "message": "Total users: 4",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.202281"
+    },
+    {
+      "test": "Search Users",
+      "success": true,
+      "message": "Search returned 2 results",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.249280"
+    },
+    {
+      "test": "Create Event",
+      "success": true,
+      "message": "Event created successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.295301"
+    },
+    {
+      "test": "Event Creation Authorization",
+      "success": true,
+      "message": "Correctly prevented non-admin from creating events",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.340302"
+    },
+    {
+      "test": "Get Events List",
+      "success": true,
+      "message": "Retrieved 2 events",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.385321"
+    },
+    {
+      "test": "Get Event by ID",
+      "success": true,
+      "message": "Retrieved event by ID",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.428249"
+    },
+    {
+      "test": "Create RSVP",
+      "success": true,
+      "message": "RSVP created successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.487247"
+    },
+    {
+      "test": "Duplicate RSVP Prevention",
+      "success": true,
+      "message": "Correctly prevented duplicate RSVP",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.533190"
+    },
+    {
+      "test": "Get Event RSVPs",
+      "success": true,
+      "message": "Retrieved 1 RSVPs",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.578307"
+    },
+    {
+      "test": "Update RSVP",
+      "success": true,
+      "message": "RSVP updated successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.625318"
+    },
+    {
+      "test": "Update Event",
+      "success": true,
+      "message": "Event updated successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.672279"
+    },
+    {
+      "test": "Event Filtering",
+      "success": true,
+      "message": "Filtered events returned 2 results",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.717327"
+    },
+    {
+      "test": "Create Blog Post",
+      "success": true,
+      "message": "Blog post created successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.764289"
+    },
+    {
+      "test": "Blog Creation Authorization",
+      "success": true,
+      "message": "Correctly prevented non-admin from creating blog posts",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.809312"
+    },
+    {
+      "test": "Get Blog Posts",
+      "success": true,
+      "message": "Retrieved 2 blog posts",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.854332"
+    },
+    {
+      "test": "Get Blog Post & View Count",
+      "success": true,
+      "message": "Retrieved blog post, view count: 1",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.898291"
+    },
+    {
+      "test": "Update Blog Post",
+      "success": true,
+      "message": "Blog post updated successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.944265"
+    },
+    {
+      "test": "Blog Statistics",
+      "success": true,
+      "message": "Total posts: 2, Published: 2",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:49.989297"
+    },
+    {
+      "test": "Blog Filtering",
+      "success": true,
+      "message": "Filtered blog posts returned 1 results",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.034340"
+    },
+    {
+      "test": "Newsletter Subscription",
+      "success": true,
+      "message": "Newsletter subscription successful",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.079236"
+    },
+    {
+      "test": "Duplicate Subscription Prevention",
+      "success": true,
+      "message": "Correctly prevented duplicate subscription",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.123313"
+    },
+    {
+      "test": "Newsletter Unsubscribe",
+      "success": true,
+      "message": "Newsletter unsubscribe successful",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.166309"
+    },
+    {
+      "test": "Get Newsletter Subscribers",
+      "success": true,
+      "message": "Retrieved 1 subscribers",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.211319"
+    },
+    {
+      "test": "Newsletter Statistics",
+      "success": true,
+      "message": "Total: 2, Active: 1",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.258230"
+    },
+    {
+      "test": "Create Project",
+      "success": true,
+      "message": "Project created successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.306263"
+    },
+    {
+      "test": "Get Projects",
+      "success": true,
+      "message": "Retrieved 2 projects",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.351301"
+    },
+    {
+      "test": "Get Project by ID",
+      "success": true,
+      "message": "Retrieved project by ID",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.394282"
+    },
+    {
+      "test": "Get Featured Projects",
+      "success": true,
+      "message": "Retrieved 2 featured projects",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.438282"
+    },
+    {
+      "test": "Update Project",
+      "success": true,
+      "message": "Project updated successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.485259"
+    },
+    {
+      "test": "Project Statistics",
+      "success": true,
+      "message": "Total: 2, Active: 1",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.531225"
+    },
+    {
+      "test": "Project Filtering",
+      "success": true,
+      "message": "Filtered projects returned 1 results",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.576274"
+    },
+    {
+      "test": "Create Contact Message",
+      "success": true,
+      "message": "Contact message sent successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.621301"
+    },
+    {
+      "test": "Get Contact Messages",
+      "success": true,
+      "message": "Retrieved 2 contact messages",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.668339"
+    },
+    {
+      "test": "Mark Message as Read",
+      "success": true,
+      "message": "Message marked as read successfully",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.713252"
+    },
+    {
+      "test": "Contact Statistics",
+      "success": true,
+      "message": "Total: 2, Unread: 1",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.759294"
+    },
+    {
+      "test": "Contact Admin Authorization",
+      "success": true,
+      "message": "Correctly prevented non-admin access",
+      "details": null,
+      "timestamp": "2025-07-29T10:49:50.804242"
+    }
+  ]
+}

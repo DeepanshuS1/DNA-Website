@@ -1,7 +1,14 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowDown, FiUsers, FiCode, FiDatabase, FiGlobe, FiCpu, FiTerminal } from 'react-icons/fi';
+import { ArrowDown, Users, Code, Database, Globe, Cpu, Terminal, Github, ExternalLink } from 'lucide-react';
 import { SiJavascript, SiPython, SiReact, SiNodedotjs, SiGit, SiDocker, SiTypescript, SiMongodb } from 'react-icons/si';
+
+// DNA Logo Component
+const DNA = () => (
+  <div className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+    DNA
+  </div>
+);
 
 const Hero = () => {
   const [symbolPositions, setSymbolPositions] = useState([]);
@@ -115,15 +122,26 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="hero" role="banner" aria-labelledby="hero-title">
-      <div className="container">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 relative overflow-hidden transition-colors duration-300" role="banner" aria-labelledby="hero-title">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0" 
+             style={{
+               backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(156, 146, 172, 0.1) 1px, transparent 0)',
+               backgroundSize: '20px 20px'
+             }}>
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div 
-          className="hero-content hero-3d-content"
+          className="text-center max-w-4xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.div className="hero-floating-icons" aria-hidden="true">
+          {/* Floating Tech Icons */}
+          <motion.div className="absolute inset-0 pointer-events-none" aria-hidden="true">
             {symbolPositions.length > 0 && (
               <>
                 <motion.div 
@@ -277,7 +295,8 @@ const Hero = () => {
                     }}
                     style={{ 
                       animationDelay: '10.5s',
-                      position: 'absolute'
+                      position: 'absolute',
+                      color: '#10b981'
                     }}
                     transition={{ 
                       y: floatingVariants.animate.transition,
@@ -293,47 +312,51 @@ const Hero = () => {
             )}
           </motion.div>
 
-          <motion.h1 id="hero-title" variants={itemVariants}>
-            &lt;DNA /&gt;
+          <motion.h1 id="hero-title" variants={itemVariants} className="mb-6">
+            <DNA />
           </motion.h1>
           
-          <motion.p className="hero-subtitle" variants={itemVariants}>
+          <motion.p className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8" variants={itemVariants}>
             Developers of Next-Gen Applications
           </motion.p>
           
-          <motion.div className="hero-description" variants={itemVariants}>
-            <div>
-              <p>Welcome to DNA Community - where innovation meets collaboration.</p>
-              <p>We develop cutting-edge applications, build professional networks, and achieve career goals in tech.</p>
-              <p>Ready to build something amazing with us?</p>
-            </div>
+          <motion.div className="max-w-2xl mx-auto mb-12" variants={itemVariants}>
+            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-4">
+              Welcome to DNA Community - where innovation meets collaboration.
+            </p>
+            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300">
+              We develop cutting-edge applications, build professional networks, and achieve career goals in tech.
+            </p>
           </motion.div>
           
-          <motion.div className="hero-cta-wrapper" variants={itemVariants}>
+          <motion.div className="flex flex-col sm:flex-row gap-4 justify-center mb-16" variants={itemVariants}>
             <motion.a 
               href="#about" 
-              className="cta-button"
+              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors duration-200"
               onClick={() => scrollToSection('about')}
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
             >
-              git clone about
+              <Code className="w-5 h-5 mr-2" />
+              Explore Community
             </motion.a>
             <motion.a 
-              href="#contact" 
-              className="cta-button secondary"
-              onClick={() => scrollToSection('contact')}
+              href="https://github.com/DNA-DEVELOPERS-DEV" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gray-900 dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-100 text-white dark:text-gray-900 rounded-lg font-semibold transition-colors duration-200"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
             >
-              npm install community
+              <Github className="w-5 h-5 mr-2" />
+              View Projects
             </motion.a>
           </motion.div>
 
           <motion.div 
-            className="scroll-indicator"
+            className="flex flex-col items-center text-gray-500 dark:text-gray-400"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2 }}
@@ -342,9 +365,9 @@ const Hero = () => {
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             >
-              <FiArrowDown size={24} />
+              <ArrowDown className="w-6 h-6" />
             </motion.div>
-            <p>// scroll to explore more</p>
+            <p className="text-sm mt-2 font-mono">// scroll to explore more</p>
           </motion.div>
         </motion.div>
       </div>

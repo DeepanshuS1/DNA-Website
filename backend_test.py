@@ -418,7 +418,7 @@ class DNABackendTester:
                 response = self.make_request("GET", f"/events/{event_id}")
                 if response.status_code == 200:
                     data = response.json()
-                    if data.get("id") == event_id:
+                    if data.get("_id") == event_id or data.get("id") == event_id:
                         self.log_test("Get Event by ID", True, "Retrieved event by ID")
                     else:
                         self.log_test("Get Event by ID", False, "Incorrect event returned", data)

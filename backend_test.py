@@ -377,8 +377,8 @@ class DNABackendTester:
             response = self.make_request("POST", "/events", event_data, admin_auth=True)
             if response.status_code == 200:
                 data = response.json()
-                if "id" in data:
-                    event_id = data["id"]
+                if "_id" in data or "id" in data:
+                    event_id = data.get("_id") or data.get("id")
                     self.log_test("Create Event", True, "Event created successfully")
                 else:
                     self.log_test("Create Event", False, "Missing event ID in response", data)

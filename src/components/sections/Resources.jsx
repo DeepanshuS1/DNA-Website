@@ -3,6 +3,103 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { FiDownload, FiExternalLink, FiBook, FiVideo, FiCode, FiFile, FiLink, FiBookOpen, FiFilter, FiX, FiSearch, FiChevronDown, FiGrid, FiList, FiMaximize2, FiMinimize2, FiEye, FiEyeOff } from 'react-icons/fi';
 import { SiJavascript, SiReact, SiPython, SiNodedotjs, SiGit, SiDocker } from 'react-icons/si';
 
+// Move allResources outside component to prevent recreation on every render
+const allResources = [
+  // PDF Resources
+  {
+    title: 'JavaScript Complete Guide',
+    description: 'Comprehensive guide covering ES6+ features, DOM manipulation, and modern JavaScript concepts.',
+    type: 'PDF',
+    category: 'PDF',
+    size: '2.5 MB',
+    downloadLink: '#',
+    icon: SiJavascript,
+    tags: ['Beginner', 'JavaScript', 'Frontend'],
+    color: '#f7df1e'
+  },
+  {
+    title: 'React Development Handbook',
+    description: 'Master React with hooks, context, and modern patterns. Includes practical examples.',
+    type: 'PDF',
+    category: 'PDF',
+    size: '3.2 MB',
+    downloadLink: '#',
+    icon: SiReact,
+    tags: ['Intermediate', 'React', 'Frontend'],
+    color: '#61dafb'
+  },
+  
+  // Video Resources
+  {
+    title: 'Node.js Backend Development',
+    description: 'Build REST APIs, work with databases, and implement authentication.',
+    type: 'Video',
+    category: 'Video',
+    duration: '25 hours',
+    link: 'https://youtube.com',
+    icon: SiNodedotjs,
+    tags: ['Node.js', 'Backend', 'API'],
+    color: '#339933'
+  },
+  {
+    title: 'React Hooks Deep Dive',
+    description: 'Advanced React patterns, custom hooks, and performance optimization.',
+    type: 'Video',
+    category: 'Video',
+    duration: '18 hours',
+    link: 'https://youtube.com',
+    icon: SiReact,
+    tags: ['React', 'Advanced', 'Hooks'],
+    color: '#61dafb'
+  },
+
+  // Course Resources
+  {
+    title: 'Full Stack Web Development',
+    description: 'Complete course covering HTML, CSS, JavaScript, React, Node.js, and MongoDB.',
+    type: 'Course',
+    category: 'Course',
+    duration: '40 hours',
+    link: 'https://freecodecamp.org',
+    icon: FiCode,
+    tags: ['Full Stack', 'Web Development', 'Free'],
+    color: '#0a0a23'
+  },
+  {
+    title: 'Git & GitHub Mastery',
+    description: 'Learn version control, collaboration, and advanced Git workflows.',
+    type: 'Course',
+    category: 'Course',
+    duration: '8 hours',
+    link: 'https://github.com/skills',
+    icon: SiGit,
+    tags: ['Git', 'Version Control', 'DevOps'],
+    color: '#f05032'
+  },
+
+  // External Link Resources
+  {
+    title: 'MDN Web Docs',
+    description: 'The most comprehensive web development documentation and tutorials.',
+    type: 'Documentation',
+    category: 'External Link',
+    link: 'https://developer.mozilla.org',
+    icon: FiBook,
+    tags: ['Documentation', 'Reference', 'Web'],
+    color: '#000000'
+  },
+  {
+    title: 'Stack Overflow',
+    description: 'Get answers to your programming questions from the community.',
+    type: 'Community',
+    category: 'External Link',
+    link: 'https://stackoverflow.com',
+    icon: FiExternalLink,
+    tags: ['Community', 'Q&A', 'Help'],
+    color: '#f48024'
+  }
+];
+
 const Resources = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,102 +114,6 @@ const Resources = () => {
   const ref = useRef(null);
   const contentRef = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  // Flatten all resources from all categories
-  const allResources = [
-    // PDF Resources
-    {
-      title: 'JavaScript Complete Guide',
-      description: 'Comprehensive guide covering ES6+ features, DOM manipulation, and modern JavaScript concepts.',
-      type: 'PDF',
-      category: 'PDF',
-      size: '2.5 MB',
-      downloadLink: '#',
-      icon: SiJavascript,
-      tags: ['Beginner', 'JavaScript', 'Frontend'],
-      color: '#f7df1e'
-    },
-    {
-      title: 'React Development Handbook',
-      description: 'Master React with hooks, context, and modern patterns. Includes practical examples.',
-      type: 'PDF',
-      category: 'PDF',
-      size: '3.2 MB',
-      downloadLink: '#',
-      icon: SiReact,
-      tags: ['Intermediate', 'React', 'Frontend'],
-      color: '#61dafb'
-    },
-    
-    // Video Resources
-    {
-      title: 'Node.js Backend Development',
-      description: 'Build REST APIs, work with databases, and implement authentication.',
-      type: 'Video',
-      category: 'Video',
-      duration: '25 hours',
-      link: 'https://youtube.com',
-      icon: SiNodedotjs,
-      tags: ['Node.js', 'Backend', 'API'],
-      color: '#339933'
-    },
-    {
-      title: 'React Hooks Deep Dive',
-      description: 'Advanced React patterns, custom hooks, and performance optimization.',
-      type: 'Video',
-      category: 'Video',
-      duration: '18 hours',
-      link: 'https://youtube.com',
-      icon: SiReact,
-      tags: ['React', 'Advanced', 'Hooks'],
-      color: '#61dafb'
-    },
-
-    // Course Resources
-    {
-      title: 'Full Stack Web Development',
-      description: 'Complete course covering HTML, CSS, JavaScript, React, Node.js, and MongoDB.',
-      type: 'Course',
-      category: 'Course',
-      duration: '40 hours',
-      link: 'https://freecodecamp.org',
-      icon: FiCode,
-      tags: ['Full Stack', 'Web Development', 'Free'],
-      color: '#0a0a23'
-    },
-    {
-      title: 'Git & GitHub Mastery',
-      description: 'Learn version control, collaboration, and advanced Git workflows.',
-      type: 'Course',
-      category: 'Course',
-      duration: '8 hours',
-      link: 'https://github.com/skills',
-      icon: SiGit,
-      tags: ['Git', 'Version Control', 'DevOps'],
-      color: '#f05032'
-    },
-
-    // External Link Resources
-    {
-      title: 'MDN Web Docs',
-      description: 'The most comprehensive web development documentation and tutorials.',
-      type: 'Documentation',
-      category: 'External Link',
-      link: 'https://developer.mozilla.org',
-      icon: FiBook,
-      tags: ['Documentation', 'Reference', 'Web'],
-      color: '#000000'
-    },
-    {
-      title: 'Stack Overflow',
-      description: 'Get answers to your programming questions from the community.',
-      type: 'Community',
-      category: 'External Link',
-      link: 'https://stackoverflow.com',
-      icon: FiExternalLink,
-      tags: ['Community', 'Q&A', 'Help'],
-      color: '#f48024'
-    }
-  ];
 
   const filterOptions = ['All', 'PDF', 'Video', 'Course', 'External Link'];
 
@@ -150,7 +151,7 @@ const Resources = () => {
         }, index * 100); // Faster sequential animation
       });
     }
-  }, [isInView, isAnimating, allResources]);
+  }, [isInView, isAnimating]);
 
   // Filter resources based on active filter and search term
   useEffect(() => {
@@ -169,7 +170,7 @@ const Resources = () => {
     }
 
     setFilteredResources(filtered);
-  }, [activeFilter, searchTerm, allResources]);
+  }, [activeFilter, searchTerm]);
 
   // Calculate content height for smooth animation
   useEffect(() => {

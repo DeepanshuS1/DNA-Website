@@ -2,11 +2,23 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FiCode, FiUsers, FiTarget, FiTrendingUp, FiAward, FiGlobe } from 'react-icons/fi';
 
+// Move stats outside component to prevent recreation on every render
+const stats = [
+  { target: 1000, label: 'Active Members', suffix: '+' },
+  { target: 50, label: 'Projects Completed', suffix: '+' },
+  { target: 200, label: 'Success Stories', suffix: '+' },
+  { target: 24, label: 'Community Support', suffix: '/7' }
+];
+
 const About = () => {
   const [counters, setCounters] = useState([0, 0, 0, 0]);
   const [isAnimating, setIsAnimating] = useState(false);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { 
+    once: true, 
+    amount: 0.1,  // Reduced from 0.2 to 0.1 for mobile
+    margin: "0px 0px -50px 0px"  // Start animation 50px before element enters viewport
+  });
 
   const features = [
     {
@@ -47,13 +59,6 @@ const About = () => {
     }
   ];
 
-  const stats = [
-    { target: 1000, label: 'Active Members', suffix: '+' },
-    { target: 50, label: 'Projects Completed', suffix: '+' },
-    { target: 200, label: 'Success Stories', suffix: '+' },
-    { target: 24, label: 'Community Support', suffix: '/7' }
-  ];
-
   // Counter animation effect
   useEffect(() => {
     if (isInView && !isAnimating) {
@@ -87,7 +92,42 @@ const About = () => {
         }, statsDelay);
       });
     }
-  }, [isInView, isAnimating, stats]);
+  }, [isInView, isAnimating]);
+
+  // Fallback for mobile - start animation after 2 seconds if not triggered
+  useEffect(() => {
+    const fallbackTimer = setTimeout(() => {
+      if (!isAnimating) {
+        setIsAnimating(true);
+        stats.forEach((stat, index) => {
+          const statsDelay = (index * 200 + 800);
+          
+          setTimeout(() => {
+            let start = 0;
+            const end = stat.target;
+            const duration = 1500;
+            const increment = end / (duration / 16);
+            
+            const timer = setInterval(() => {
+              start += increment;
+              if (start >= end) {
+                start = end;
+                clearInterval(timer);
+              }
+              
+              setCounters(prev => {
+                const newCounters = [...prev];
+                newCounters[index] = Math.floor(start);
+                return newCounters;
+              });
+            }, 16);
+          }, statsDelay);
+        });
+      }
+    }, 2000);
+
+    return () => clearTimeout(fallbackTimer);
+  }, [isAnimating]);
 
   const containerVariants = {
     hidden: { opacity: 0 },

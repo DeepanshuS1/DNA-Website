@@ -892,7 +892,7 @@ class DNABackendTester:
                     if isinstance(data, list):
                         self.log_test("Get Contact Messages", True, f"Retrieved {len(data)} contact messages")
                         if data:
-                            message_id = data[0].get("id")
+                            message_id = data[0].get("_id") or data[0].get("id")
                     else:
                         self.log_test("Get Contact Messages", False, "Response is not a list", data)
                 else:

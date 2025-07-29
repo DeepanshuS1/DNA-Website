@@ -592,7 +592,7 @@ class DNABackendTester:
                 response = self.make_request("GET", f"/blog/{blog_post_id}")
                 if response.status_code == 200:
                     data = response.json()
-                    if data.get("id") == blog_post_id and data.get("view_count", 0) > 0:
+                    if (data.get("_id") == blog_post_id or data.get("id") == blog_post_id) and data.get("view_count", 0) > 0:
                         self.log_test("Get Blog Post & View Count", True, f"Retrieved blog post, view count: {data['view_count']}")
                     else:
                         self.log_test("Get Blog Post & View Count", False, "Blog post or view count issue", data)

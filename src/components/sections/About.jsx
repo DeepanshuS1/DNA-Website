@@ -13,12 +13,21 @@ const stats = [
 const About = () => {
   const [counters, setCounters] = useState([0, 0, 0, 0]);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { 
     once: true, 
     amount: 0.1,  // Reduced from 0.2 to 0.1 for mobile
     margin: "0px 0px -50px 0px"  // Start animation 50px before element enters viewport
   });
+
+  // Force visibility after component mounts
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const features = [
     {
@@ -267,8 +276,17 @@ const About = () => {
         <motion.div
           variants={containerVariants}
           initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ 
+            once: true, 
+            amount: 0.1,
+            margin: "0px 0px -100px 0px"
+          }}
+          style={{
+            opacity: isVisible ? 1 : undefined,
+            visibility: isVisible ? 'visible' : undefined
+          }}
         >
           <motion.h2 
             id="about-title" 

@@ -1590,14 +1590,15 @@ html {
 
 /* About Section */
 .about {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
-  position: relative;
-  overflow: hidden;
-  padding: 100px 0;
-  min-height: 100vh;
-  display: block;
-  visibility: visible;
-  opacity: 1;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 100px 0 !important;
+  min-height: 100vh !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 1 !important;
 }
 
 /* About Background Animation */
@@ -1888,11 +1889,16 @@ html {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    z-index: 1 !important;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%) !important;
   }
 
   .section {
     padding: 30px 0;
     min-height: auto;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .section-title {

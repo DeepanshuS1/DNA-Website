@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { Menu, X } from 'lucide-react';
+import ThemeToggle from '../ui/ThemeToggle';
 import logoDark from '../../assets/images/logos/DNA-LOGO-DARK.jpeg';
 import logoLight from '../../assets/images/logos/DNA-LOGO.jpeg';
 
@@ -82,25 +83,30 @@ const Header = () => {
 
   return (
     <motion.header 
-      className={`header ${isScrolledPastHome ? 'header-light' : ''}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolledPastHome 
+          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg' 
+          : 'bg-transparent'
+      }`}
       initial="hidden"
       animate="visible"
       variants={navVariants}
       role="banner"
     >
-      <div className="container">
-        <nav className="nav" role="navigation" aria-label="Main navigation">
+      <div className="container mx-auto px-4">
+        <nav className="flex items-center justify-between h-16" role="navigation" aria-label="Main navigation">
           <motion.a 
             href="#home" 
-            className="logo" 
+            className="flex items-center space-x-2" 
             onClick={() => scrollToSection('home')}
             aria-label="DNA Community - Home"
           >
-            <div className="logo-container">
+            <div className="w-10 h-10 rounded-lg overflow-hidden">
               <motion.img 
                 key={isScrolledPastHome ? 'light' : 'dark'}
-                src={isScrolledPastHome ? logoLight : logoDark} 
+                src={isScrolledPastHome ? logoDark : logoLight} 
                 alt="DNA Community Logo"
+                className="w-full h-full object-cover"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -110,9 +116,11 @@ const Header = () => {
                 }}
               />
             </div>
+            <span className="text-xl font-bold text-gray-900 dark:text-white">DNA</span>
           </motion.a>
-          <ul className={`nav-links ${isMenuOpen ? 'nav-links-mobile' : ''}`}>
-            {['Home', 'About', 'Team', 'Resources', 'Events', 'Contact'].map((item, index) => (
+          
+          <ul className={`hidden md:flex items-center space-x-8 ${isMenuOpen ? 'flex' : ''}`}>
+            {['Home', 'About', 'Team', 'Projects', 'Resources', 'Events', 'Blog', 'Contact'].map((item, index) => (
               <motion.li 
                 key={item}
                 variants={linkVariants}
@@ -124,15 +132,63 @@ const Header = () => {
                 <a 
                   href={`#${item.toLowerCase()}`} 
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className={activeSection === item.toLowerCase() ? 'active' : ''}
+                  className={`text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 ${activeSection === item.toLowerCase() ? 'text-blue-600 dark:text-blue-400 font-semibold' : ''}`}
                 >
                   {item}
                 </a>
               </motion.li>
             ))}
           </ul>
-          <motion.button 
-            className="mobile-menu-btn" 
+          
+          <div className="flex items-center space-x-4">
+            <ThemeToggle />
+            <motion.button 
+              className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300" 
+              onClick={toggleMenu}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </motion.button>
+          </div>
+        </nav>
+        
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <motion.div
+            className="md:hidden absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 shadow-lg border-t border-gray-200 dark:border-gray-700"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="px-4 py-6 space-y-4">
+              {['Home', 'About', 'Team', 'Projects', 'Resources', 'Events', 'Blog', 'Contact'].map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => {
+                    scrollToSection(item.toLowerCase());
+                    setIsMenuOpen(false);
+                  }}
+                  className={`block text-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 ${
+                    activeSection === item.toLowerCase() ? 'text-blue-600 dark:text-blue-400 font-semibold' : ''
+                  }`}
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </div>
+    </motion.header>
+  );
+};
+
+export default Header;
             onClick={toggleMenu}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}

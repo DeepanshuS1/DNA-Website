@@ -1,30 +1,37 @@
 import React from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { Header, Footer } from './components/layout';
 import { 
   Hero, 
   Goals, 
   About, 
   Team, 
+  Projects,
   Resources, 
   Events, 
+  Blog,
   Contact 
 } from './components/sections';
 
 const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <main id="main-content">
-        <Hero />
-        <Goals />
-        <About />
-        <Team />
-        <Resources />
-        <Events />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="App bg-white dark:bg-gray-900 transition-colors duration-300">
+        <Header />
+        <main id="main-content" className="pt-16">
+          <Hero />
+          <Goals />
+          <About />
+          <Team />
+          <Projects />
+          <Resources />
+          <Events />
+          <Blog />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 };
 

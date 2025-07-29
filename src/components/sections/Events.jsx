@@ -216,7 +216,7 @@ const events = [
             return (
               <motion.div 
                 key={index} 
-                className="event-card"
+                className="event-card card-base"
                 variants={cardVariants}
                 whileHover="hover"
               >
@@ -258,7 +258,7 @@ const events = [
                         <span className="live-text">LIVE NOW</span>
                       </motion.div>
                     ) : (
-                      daysUntil > 0 ? `${daysUntil} days to go` : 'Event Passed'
+                      daysUntil > 0 ? `${daysUntil} days to go` : 'Event Completed'
                     )}
                   </div>
                 </div>
@@ -284,7 +284,7 @@ const events = [
                     whileHover={event.isOngoing || daysUntil > 0 ? { scale: 1.02 } : {}}
                     whileTap={event.isOngoing || daysUntil > 0 ? { scale: 0.98 } : {}}
                   >
-                    {event.isOngoing ? 'Join Now' : (daysUntil > 0 ? 'Register Now' : 'Event Ended')}
+                    {event.isOngoing ? 'Join Now' : (daysUntil > 0 ? 'Register Now' : 'Event Completed')}
                   </motion.button>
                 </div>
               </motion.div>

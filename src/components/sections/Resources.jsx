@@ -105,8 +105,6 @@ const Resources = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredResources, setFilteredResources] = useState([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [counters, setCounters] = useState({ pdf: 0, video: 0, course: 0, link: 0 });
-  const [isAnimating, setIsAnimating] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
   const [showPreview, setShowPreview] = useState(6); // Number of items to show initially
@@ -116,42 +114,6 @@ const Resources = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const filterOptions = ['All', 'PDF', 'Video', 'Course', 'External Link'];
-
-  // Counter animation effect
-  useEffect(() => {
-    if (isInView && !isAnimating) {
-      setIsAnimating(true);
-      
-      const counts = {
-        pdf: allResources.filter(r => r.category === 'PDF').length,
-        video: allResources.filter(r => r.category === 'Video').length,
-        course: allResources.filter(r => r.category === 'Course').length,
-        link: allResources.filter(r => r.category === 'External Link').length
-      };
-
-      Object.keys(counts).forEach((key, index) => {
-        setTimeout(() => {
-          let start = 0;
-          const end = counts[key];
-          const duration = Math.max(300, Math.min(800, end * 150)); // Adaptive duration
-          const increment = end / (duration / 16);
-          
-          const timer = setInterval(() => {
-            start += increment;
-            if (start >= end) {
-              start = end;
-              clearInterval(timer);
-            }
-            
-            setCounters(prev => ({
-              ...prev,
-              [key]: Math.floor(start)
-            }));
-          }, 16);
-        }, index * 100); // Faster sequential animation
-      });
-    }
-  }, [isInView, isAnimating]);
 
   // Filter resources based on active filter and search term
   useEffect(() => {
@@ -255,30 +217,6 @@ const Resources = () => {
     exit: { opacity: 0, x: 20 }
   };
 
-  const statsVariants = {
-    hidden: { 
-      scale: 0.3, 
-      opacity: 0, 
-      rotateX: -90, 
-      y: 50,
-      filter: "blur(10px)"
-    },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      rotateX: 0,
-      y: 0,
-      filter: "blur(0px)",
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 25,
-        duration: 1.2,
-        ease: [0.25, 0.4, 0.25, 1]
-      }
-    }
-  };
-
   const handleResourceClick = (resource) => {
     if (resource.downloadLink) {
       // Handle PDF download
@@ -369,54 +307,6 @@ const Resources = () => {
           >
             Free resources to accelerate your development journey
           </motion.p>
-
-          {/* Resource Statistics */}
-          <motion.div className="resources-stats" variants={itemVariants}>
-            {[
-              { label: 'PDFs', count: counters.pdf, icon: FiFile, color: '#e74c3c' },
-              { label: 'Videos', count: counters.video, icon: FiVideo, color: '#3498db' },
-              { label: 'Courses', count: counters.course, icon: FiBookOpen, color: '#1abc9c' },
-              { label: 'Links', count: counters.link, icon: FiLink, color: '#f39c12' }
-            ].map((stat, index) => {
-              const StatIcon = stat.icon;
-              return (
-                <motion.div 
-                  key={index}
-                  className="stat-item"
-                  variants={statsVariants}
-                  whileHover={{ 
-                    scale: 1.15,
-                    y: -8,
-                    rotate: [0, -2, 2, 0],
-                    boxShadow: `0 15px 35px ${stat.color}40`,
-                    transition: {
-                      type: "spring",
-                      stiffness: 600,
-                      damping: 20,
-                      duration: 0.3
-                    }
-                  }}
-                >
-                  <div 
-                    className="stat-icon"
-                    style={{ backgroundColor: stat.color }}
-                  >
-                    <StatIcon size={20} />
-                  </div>
-                  <motion.span 
-                    className="stat-number"
-                    key={stat.count}
-                    initial={{ scale: 1.2 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {stat.count}
-                  </motion.span>
-                  <span className="stat-label">{stat.label}</span>
-                </motion.div>
-              );
-            })}
-          </motion.div>
 
           {/* Search and Filter Controls */}
           <motion.div className="resources-controls" variants={itemVariants}>

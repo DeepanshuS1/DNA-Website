@@ -241,7 +241,7 @@ const Team = () => {
             return (
               <div key={index}>
                 <motion.article 
-                  className="team-card"
+                  className="team-card card-base card-centered"
                   variants={cardVariants}
                   whileHover="hover"
                   role="listitem"

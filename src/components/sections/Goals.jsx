@@ -244,7 +244,7 @@ const Goals = () => {
         </motion.div>
         
         <motion.div 
-          className="goals-grid"
+          className="goals-grid grid-responsive grid-auto-320"
           variants={containerVariants}
           initial="hidden"
           animate={controls}
@@ -254,7 +254,7 @@ const Goals = () => {
             return (
               <motion.article 
                 key={index}
-                className="goal-card"
+                className="goal-card card-base card-centered card-with-backdrop"
                 variants={cardVariants}
                 whileHover="hover"
                 whileTap={{ scale: 0.95 }}

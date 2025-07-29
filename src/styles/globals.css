@@ -358,7 +358,7 @@ html {
 }
 
 .hero::after {
-  content: '{ } < /> [ ] ( ) => function var let const class import export async await return if else for while switch case break continue try catch finally console.log() document.getElementById() addEventListener() querySelector() innerHTML textContent style.display setTimeout() setInterval() fetch() then() catch() map() filter() reduce() forEach() push() pop() shift() unshift() splice() slice() indexOf() includes() split() join() replace() substring() toLowerCase() toUpperCase() parseInt() parseFloat() Math.random() Math.floor() Math.ceil() JSON.stringify() JSON.parse() localStorage.getItem() localStorage.setItem() sessionStorage window location history navigator screen alert() confirm() prompt() .html .css .js .py .java .cpp .c .php .rb .go .rs .swift .kt .ts .jsx .tsx .vue .svelte .angular .react .node .npm .git .github .vscode .sublime .atom .vim .emacs .bash .zsh .terminal .cli .api .rest .graphql .sql .mongodb .mysql .postgresql .redis .docker .kubernetes .aws .azure .gcp .linux .ubuntu .windows .macos .android .ios .flutter .xamarin .unity .unreal .blender .photoshop .illustrator .figma .sketch .invision .zeplin .slack .discord .zoom .teams .jira .trello .notion .obsidian .markdown .latex .jupyter .anaconda .pandas .numpy .matplotlib .tensorflow .pytorch .keras .opencv .scikit .django .flask .fastapi .express .nextjs .nuxtjs .gatsby .gridsome .hugo .jekyll .wordpress .drupal .joomla .magento .shopify .woocommerce .stripe .paypal .twilio .sendgrid .mailchimp .hubspot .salesforce .zendesk .intercom .hotjar .googleanalytics .gtm .facebook .twitter .instagram .linkedin .youtube .tiktok .snapchat .pinterest .reddit .stackoverflow .medium .dev.to .hashnode .codepen .codesandbox .replit .glitch .netlify .vercel .heroku .railway .render .digitalocean .linode .vultr .cloudflare .amazon .microsoft .google .apple .meta .tesla .netflix .spotify .uber .airbnb .dropbox .zoom .slack .discord .whatsapp .telegram .signal .encryption .blockchain .cryptocurrency .bitcoin .ethereum .nft .web3 .defi .dao .metaverse .ai .ml .dl .nlp .cv .robotics .iot .ar .vr .quantum .5g .edge .serverless .microservices .devops .cicd .testing .debugging .refactoring .optimization .performance .security .privacy .accessibility .responsive .mobile .desktop .tablet .pwa .spa .ssr .ssg .jamstack .headless .cms .ecommerce .saas .paas .iaas .api .sdk .library .framework .package .module .component .hook .state .props .context .routing .authentication .authorization .jwt .oauth .cors .csrf .xss .sql-injection .dos .ddos .firewall .vpn .ssl .tls .https .dns .cdn .load-balancer .cache .redis .memcached .elasticsearch .kibana .grafana .prometheus .monitoring .logging .alerting .backup .disaster-recovery .scalability .availability .reliability .maintainability .testability .deployability .portability .interoperability .usability .security .performance .compatibility .efficiency .flexibility .modularity .reusability .extensibility .readability .documentation .commenting .version-control .branching .merging .code-review .pair-programming .mob-programming .tdd .bdd .ddd .solid .dry .kiss .yagni .mvc .mvp .mvvm .observer .singleton .factory .builder .adapter .decorator .facade .proxy .command .strategy .template .visitor .iterator .composite .flyweight .bridge .chain-of-responsibility .memento .state .interpreter .mediator .prototype .abstract-factory .dependency-injection .inversion-of-control .aspect-oriented .functional .object-oriented .procedural .declarative .imperative .event-driven .reactive .asynchronous .synchronous .parallel .concurrent .distributed .real-time .batch .stream .pipeline .queue .stack .tree .graph .hash .array .linked-list .binary-search .sorting .searching .dynamic-programming .greedy .divide-and-conquer .backtracking .recursion .iteration .memoization .big-o .time-complexity .space-complexity .algorithm .data-structure .database .relational .nosql .acid .base .cap .eventual-consistency .sharding .replication .partitioning .indexing .normalization .denormalization .migration .schema .query .join .subquery .view .stored-procedure .trigger .cursor .transaction .commit .rollback .isolation .atomicity .consistency .durability .backup .restore .import .export .etl .data-warehouse .data-lake .data-mart .oltp .olap .bi .analytics .reporting .dashboard .visualization .chart .graph .table .pivot .drill-down .drill-up .slice .dice .cube .dimension .measure .kpi .metric .insight .trend .pattern .correlation .causation .regression .classification .clustering .segmentation .recommendation .personalization .ab-testing .multivariate .hypothesis .statistical-significance .confidence-interval .p-value .null-hypothesis .alternative-hypothesis .type-i-error .type-ii-error .power .effect-size .sample-size .population .sample .bias .variance .standard-deviation .mean .median .mode .range .quartile .percentile .outlier .anomaly .fraud .risk .compliance .governance .audit .regulation .gdpr .ccpa .sox .hipaa .pci .iso .nist .owasp .sans .cissp .ceh .oscp .comptia .aws-certified .azure-certified .gcp-certified .oracle-certified .microsoft-certified .cisco-certified .vmware-certified .red-hat-certified .scrum-master .product-owner .agile .scrum .kanban .lean .six-sigma .prince2 .pmp .itil .cobit .togaf .zachman .feaf .sabsa .coso .cmmv .pmbok .babok .swebok .togaf .archimate .uml .bpmn .er-diagram .use-case .class-diagram .sequence-diagram .activity-diagram .state-diagram .component-diagram .deployment-diagram .object-diagram .collaboration-diagram .timing-diagram .interaction-overview-diagram .communication-diagram .package-diagram .profile-diagram .stereotype .tagged-value .constraint .note .hyperlink .bookmark .cross-reference .traceability .impact-analysis .change-management .configuration-management .release-management .deployment-management .incident-management .problem-management .change-request .service-request .knowledge-base .faq .help-desk .service-desk .itsm .itom .itam .cmdb .discovery .monitoring .alerting .ticketing .escalation .sla .slo .kpi .csi .pdca .raci .swot .pest .porter .bcg .ansoff .balanced-scorecard .okr .kpi .roi .npv .irr .payback .break-even .tcо .tco .roa .roe .ebitda .gross-margin .net-margin .operating-margin .current-ratio .quick-ratio .debt-to-equity .return-on-investment .cost-benefit .feasibility .business-case .project-charter .scope .wbs .gantt .pert .cpm .resource-leveling .risk-register .assumption-log .issue-log .change-log .lesson-learned .post-mortem .retrospective .standup .sprint .backlog .epic .user-story .acceptance-criteria .definition-of-done .velocity .burndown .burnup .cumulative-flow .lead-time .cycle-time .throughput .work-in-progress .bottleneck .constraint .theory-of-constraints .lean-startup .mvp .prototype .wireframe .mockup .persona .user-journey .empathy-map .service-blueprint .customer-journey .touchpoint .moment-of-truth .pain-point .gain-point .value-proposition .business-model .revenue-stream .cost-structure .key-partner .key-activity .key-resource .customer-segment .customer-relationship .channel .competitive-advantage .differentiation .positioning .branding .marketing .sales .customer-acquisition .customer-retention .churn .lifetime-value .acquisition-cost .conversion-rate .funnel .pipeline .lead .prospect .qualified-lead .opportunity .deal .close .win-rate .sales-cycle .quota .territory .account .contact .activity .task .follow-up .nurture .upsell .cross-sell .renewal .expansion .referral .advocacy .testimonial .case-study .white-paper .ebook .webinar .podcast .blog .newsletter .social-media .content-marketing .seo .sem .ppc .cpc .cpm .ctr .conversion .attribution .retargeting .lookalike .segment .cohort .funnel .a-b-test .multivariate-test .personalization .recommendation .automation .workflow .trigger .action .condition .filter .sort .search .pagination .infinite-scroll .lazy-loading .caching .compression .minification .bundling .tree-shaking .code-splitting .hot-reload .live-reload .auto-save .auto-complete .syntax-highlighting .error-highlighting .code-folding .minimap .breadcrumb .tab .panel .sidebar .toolbar .menu .dropdown .modal .tooltip .popover .notification .toast .alert .badge .chip .tag .label .button .link .icon .image .video .audio .canvas .svg .chart .table .form .input .textarea .select .checkbox .radio .switch .slider .datepicker .timepicker .colorpicker .file-upload .drag-drop .search .filter .sort .paginate .infinite-scroll .virtual-scroll .skeleton .loading .spinner .progress .stepper .wizard .carousel .slider .gallery .lightbox .zoom .pan .rotate .crop .resize .filter .effect .transition .animation .keyframe .easing .duration .delay .iteration .direction .fill-mode .play-state .hover .focus .active .visited .disabled .readonly .required .optional .valid .invalid .dirty .pristine .touched .untouched .pending .resolved .rejected .loading .loaded .error .success .warning .info .debug .trace .fatal .critical .high .medium .low .trivial .blocker .major .minor .patch .hotfix .feature .enhancement .bug .defect .issue .ticket .task .story .epic .theme .initiative .program .portfolio .roadmap .timeline .milestone .deliverable .artifact .output .outcome .impact .value .benefit .cost .risk .assumption .constraint .dependency .stakeholder .sponsor .customer .user .end-user .business-user .technical-user .admin .super-admin .guest .anonymous .registered .premium .freemium .trial .subscription .license .seat .concurrent .named .floating .perpetual .term .maintenance .support .training .consulting .implementation .integration .migration .upgrade .customization .configuration .development .testing .deployment .maintenance .monitoring .troubleshooting .optimization .tuning .scaling .refactoring .reengineering .modernization .transformation .digitalization .automation .orchestration .choreography .composition .aggregation .federation .virtualization .containerization .microservices .serverless .edge .fog .cloud .hybrid .multi-cloud .on-premise .co-location .data-center .rack .server .blade .chassis .cpu .gpu .memory .storage .network .switch .router .firewall .load-balancer .proxy .gateway .endpoint .interface .protocol .standard .specification .rfc .iso .ieee .w3c .ecma .ansi .unicode .utf-8 .ascii .binary .hexadecimal .octal .decimal .floating-point .integer .boolean .string .character .byte .bit .kilobyte .megabyte .gigabyte .terabyte .petabyte .exabyte .zettabyte .yottabyte .hertz .kilohertz .megahertz .gigahertz .terahertz .pixel .resolution .dpi .ppi .rgb .cmyk .hsl .hsv .hex .pantone .vector .raster .bitmap .jpeg .png .gif .svg .pdf .eps .ai .psd .sketch .figma .xd .invision .principle .framer .protopie .axure .balsamiq .wireframe .mockup .prototype .design-system .style-guide .pattern-library .component-library .atomic-design .material-design .human-interface .fluent-design .carbon-design .ant-design .bootstrap .foundation .bulma .tailwind .semantic-ui .chakra-ui .material-ui .ant-design .element-ui .vuetify .quasar .buefy .oruga .naive-ui .arco-design .semi-design .next-ui .mantine .grommet .rebass .theme-ui .styled-components .emotion .jss .css-modules .sass .scss .less .stylus .postcss .autoprefixer .cssnano .purgecss .tailwindcss .windicss .unocss .twind .stitches .vanilla-extract .linaria .astroturf .styled-jsx .goober .glamor .aphrodite .radium .reactxp .react-native .expo .flutter .ionic .cordova .phonegap .xamarin .unity .unreal .godot .construct .gamemaker .rpgmaker .renpy .twine .ink .articy .chatmapper .yarn .fungus .playmaker .bolt .visual-scripting .blueprint .node-editor .graph-editor .tree-editor .timeline-editor .animation-editor .particle-editor .shader-editor .material-editor .texture-editor .model-editor .mesh-editor .skeleton-editor .rig-editor .constraint-editor .physics-editor .collision-editor .trigger-editor .volume-editor .camera-editor .light-editor .audio-editor .video-editor .image-editor .text-editor .code-editor .markdown-editor .wysiwyg-editor .rich-text-editor .html-editor .css-editor .javascript-editor .json-editor .xml-editor .yaml-editor .toml-editor .ini-editor .config-editor .log-editor .terminal-editor .shell-editor .command-editor .query-editor .formula-editor .expression-editor .rule-editor .workflow-editor .process-editor .diagram-editor .chart-editor .graph-editor .map-editor .calendar-editor .schedule-editor .planner-editor .todo-editor .note-editor .journal-editor .blog-editor .wiki-editor .documentation-editor .manual-editor .guide-editor .tutorial-editor .course-editor .lesson-editor .quiz-editor .test-editor .exam-editor .survey-editor .form-editor .report-editor .dashboard-editor .presentation-editor .slide-editor .document-editor .spreadsheet-editor .database-editor .model-editor .schema-editor .migration-editor .seed-editor .fixture-editor .factory-editor .mock-editor .stub-editor .spy-editor .double-editor .fake-editor .dummy-editor .null-object-editor .adapter-editor .decorator-editor .facade-editor .proxy-editor .command-editor .strategy-editor .template-editor .visitor-editor .iterator-editor .composite-editor .flyweight-editor .bridge-editor .chain-editor .memento-editor .state-editor .interpreter-editor .mediator-editor .prototype-editor .factory-editor .builder-editor .singleton-editor .observer-editor .mvc-editor .mvp-editor .mvvm-editor .flux-editor .redux-editor .mobx-editor .vuex-editor .pinia-editor .zustand-editor .recoil-editor .jotai-editor .valtio-editor .easy-peasy-editor .unstated-editor .constate-editor .hookstate-editor .effector-editor .reatom-editor .storeon-editor .unistore-editor .pullstate-editor .react-sweet-state .xstate-editor .robot-editor .machina-editor .state-machine-editor .finite-state-machine .pushdown-automaton .turing-machine .lambda-calculus .combinatory-logic .category-theory .type-theory .proof-theory .model-theory .set-theory .graph-theory .number-theory .game-theory .information-theory .coding-theory .complexity-theory .computability-theory .recursion-theory .formal-methods .verification .validation .theorem-proving .model-checking .static-analysis .dynamic-analysis .symbolic-execution .abstract-interpretation .data-flow-analysis .control-flow-analysis .taint-analysis .alias-analysis .pointer-analysis .escape-analysis .side-effect-analysis .purity-analysis .termination-analysis .complexity-analysis .performance-analysis .security-analysis .vulnerability-analysis .penetration-testing .red-team .blue-team .purple-team .threat-modeling .risk-assessment .security-audit .compliance-audit .code-review .peer-review .pair-programming .mob-programming .code-walkthrough .inspection .formal-review .informal-review .self-review .automated-review .continuous-review .pre-commit .post-commit .pre-push .post-push .pre-receive .post-receive .pre-merge .post-merge .pre-deploy .post-deploy .pre-release .post-release .canary-release .blue-green-deployment .rolling-deployment .feature-toggle .feature-flag .a-b-testing .canary-testing .shadow-testing .chaos-engineering .fault-injection .load-testing .stress-testing .volume-testing .endurance-testing .spike-testing .configuration-testing .installation-testing .compatibility-testing .migration-testing .upgrade-testing .downgrade-testing .rollback-testing .disaster-recovery-testing .backup-testing .restore-testing .failover-testing .switchover-testing .scalability-testing .elasticity-testing .performance-testing .benchmark-testing .regression-testing .smoke-testing .sanity-testing .acceptance-testing .user-acceptance-testing .business-acceptance-testing .alpha-testing .beta-testing .gamma-testing .pilot-testing .field-testing .operational-testing .integration-testing .system-testing .end-to-end-testing .api-testing .service-testing .contract-testing .component-testing .unit-testing .white-box-testing .black-box-testing .gray-box-testing .static-testing .dynamic-testing .manual-testing .automated-testing .exploratory-testing .ad-hoc-testing .monkey-testing .gorilla-testing .mutation-testing .property-based-testing .fuzz-testing .penetration-testing .security-testing .usability-testing .accessibility-testing .localization-testing .internationalization-testing .globalization-testing .responsive-testing .cross-browser-testing .cross-platform-testing .mobile-testing .desktop-testing .web-testing .api-testing .database-testing .network-testing .infrastructure-testing .cloud-testing .container-testing .microservice-testing .serverless-testing .edge-testing .iot-testing .blockchain-testing .ai-testing .ml-testing .model-testing .data-testing .pipeline-testing .workflow-testing .orchestration-testing .choreography-testing .event-testing .message-testing .queue-testing .stream-testing .batch-testing .real-time-testing .async-testing .sync-testing .parallel-testing .concurrent-testing .distributed-testing .decentralized-testing .federated-testing';
+  content: 'function() { const dna = "development"; return code + learning + community; }';
   position: absolute;
   top: 0;
   left: 0;
@@ -964,122 +964,64 @@ html {
   opacity: 0.9;
 }
 
-/* Event Notification Styles */
-.event-notification,
-.form-notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-  max-width: 400px;
-  min-width: 300px;
-}
-
-.notification-content {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 
-              0 0 0 1px rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  position: relative;
-  border-left: 4px solid #3498db;
-  animation: slideIn 0.3s ease-out;
-}
-
-.notification-content.success {
-  border-left-color: #1abc9c;
-  background: linear-gradient(135deg, rgba(26, 188, 156, 0.1) 0%, rgba(255, 255, 255, 0.95) 50%);
-}
-
-.notification-content.info {
-  border-left-color: #3498db;
-  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(255, 255, 255, 0.95) 50%);
-}
-
-.notification-content.error {
-  border-left-color: #e74c3c;
-  background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(255, 255, 255, 0.95) 50%);
-}
-
-.notification-icon {
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 30px;
-}
-
-.notification-message {
-  flex: 1;
-  margin: 0;
-  font-size: 14px;
-  font-weight: 500;
-  color: #2c3e50;
-  line-height: 1.4;
-}
-
-.notification-close {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  background: none;
-  border: none;
-  font-size: 18px;
-  color: #7f8c8d;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.notification-close:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: #e74c3c;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Responsive notification */
-@media (max-width: 768px) {
-  .event-notification,
-  .form-notification {
-    top: 10px;
-    right: 10px;
-    left: 10px;
-    max-width: none;
-    min-width: auto;
-  }
-  
-  .notification-content {
-    padding: 15px;
-    font-size: 13px;
-  }
-  
-  .notification-icon {
-    font-size: 20px;
-    min-width: 25px;
-  }
-}
-
 /* Centered Card Notification Styles */
+
+/* Base Card Styles - Common properties for all cards */
+.card-base {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.card-base:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-centered {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-with-backdrop {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* Common Grid Layouts */
+.grid-responsive {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-auto-280 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-auto-300 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-auto-320 {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.grid-auto-350 {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.grid-auto-400 {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+/* Form Notification Styles */
 .form-notification-overlay {
   position: fixed;
   top: 0;
@@ -1401,23 +1343,11 @@ html {
 }
 
 .goal-card {
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 20px;
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 
-    0 10px 25px rgba(0, 0, 0, 0.08),
-    0 5px 15px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  position: relative;
-  overflow: hidden;
   will-change: transform;
   transform-style: preserve-3d;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .goal-card::before {
@@ -1735,15 +1665,7 @@ html {
 }
 
 .feature-card {
-  background: white;
-  padding: 2rem;
   border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
 .feature-card::before {
@@ -1921,14 +1843,8 @@ html {
 }
 
 .team-card {
-  background: white;
   border-radius: 20px;
-  padding: 2rem;
-  text-align: center;
   box-shadow: 0 10px 30px rgba(30, 60, 114, 0.1);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
   will-change: transform;
   transform: translateZ(0);
 }
@@ -2509,50 +2425,6 @@ html {
 .resources .section-subtitle {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* Resource Statistics */
-.resources-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
-  padding: 2rem 0;
-}
-
-.resources-stats .stat-item {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  padding: 1.5rem;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.resources-stats .stat-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1rem;
-  color: white;
-}
-
-.resources-stats .stat-number {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 0.5rem;
-}
-
-.resources-stats .stat-label {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
 }
 
 /* Search and Filter Controls */
@@ -3942,11 +3814,6 @@ html {
     min-width: auto;
   }
   
-  .resources-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  
   .resources-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -4011,10 +3878,6 @@ html {
 @media (max-width: 480px) {
   .resources {
     padding: 80px 0;
-  }
-  
-  .resources-stats {
-    grid-template-columns: 1fr;
   }
   
   .resource-card {
@@ -4263,12 +4126,10 @@ html {
 }
 
 .event-card {
-  background: white;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(30, 60, 114, 0.1);
-  transition: all 0.4s ease;
-  position: relative;
+  padding: 0;
 }
 
 .event-card:hover {
@@ -4582,12 +4443,8 @@ html {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: white;
   padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  transition: all 0.3s ease;
+  text-align: left;
 }
 
 .contact-info-card:hover {
@@ -5013,10 +4870,6 @@ html {
   .goals-grid,
   .team-grid,
   .events-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .contact-content {
     grid-template-columns: 1fr;
   }
   

@@ -325,7 +325,7 @@ const Contact = () => {
                   return (
                     <motion.div 
                       key={index}
-                      className="contact-info-card"
+                      className="contact-info-card card-base"
                       variants={itemVariants}
                       whileHover={cardHoverVariants.hover}
                     >

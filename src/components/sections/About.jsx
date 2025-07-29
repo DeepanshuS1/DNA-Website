@@ -380,7 +380,7 @@ const About = () => {
                     whileHover="hover"
                     whileTap={{ scale: 0.95 }}
                   >
-                    <div className="feature-card">
+                    <div className="feature-card card-base card-centered">
                       <motion.div
                         className="feature-icon-wrapper"
                         whileHover={{ 

@@ -978,9 +978,77 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
+.card-base::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 18px;
+  background: linear-gradient(45deg, 
+    #667eea 0%, 
+    #764ba2 12.5%, 
+    #1abc9c 25%, 
+    #3498db 37.5%, 
+    #e74c3c 50%, 
+    #f39c12 62.5%,
+    #9b59b6 75%,
+    #2ecc71 87.5%,
+    #667eea 100%
+  );
+  background-size: 400% 400%;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: gradientRotate 6s linear infinite;
+  z-index: -1;
+}
+
+.card-base::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  background: inherit;
+  z-index: -1;
+}
+
+@keyframes gradientRotate {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes borderPulse {
+  0%, 100% { 
+    box-shadow: 
+      0 0 5px rgba(102, 126, 234, 0.3),
+      0 0 10px rgba(118, 75, 162, 0.2),
+      0 0 15px rgba(26, 188, 156, 0.1);
+  }
+  50% { 
+    box-shadow: 
+      0 0 10px rgba(102, 126, 234, 0.5),
+      0 0 20px rgba(118, 75, 162, 0.3),
+      0 0 30px rgba(26, 188, 156, 0.2);
+  }
+}
+
 .card-base:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.15),
+    0 0 20px rgba(102, 126, 234, 0.1);
+  animation: borderPulse 2s ease-in-out infinite;
+}
+
+.card-base:hover::before {
+  opacity: 1;
 }
 
 .card-centered {
@@ -1350,6 +1418,36 @@ html {
   transform-style: preserve-3d;
 }
 
+.goal-card::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 23px;
+  background: conic-gradient(
+    from 0deg,
+    #667eea,
+    #764ba2,
+    #1abc9c,
+    #667eea
+  );
+  opacity: 0;
+  transition: all 0.4s ease;
+  animation: rotateBorder 8s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotateBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.goal-card:hover::after {
+  opacity: 0.8;
+}
+
 .goal-card::before {
   content: '';
   position: absolute;
@@ -1668,6 +1766,39 @@ html {
   border-radius: 15px;
 }
 
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 17px;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(52, 152, 219, 0.1),
+    rgba(231, 76, 60, 0.1),
+    rgba(46, 204, 113, 0.1),
+    rgba(243, 156, 18, 0.1),
+    transparent
+  );
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: all 0.4s ease;
+  animation: gradientShift 4s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+
+.feature-card:hover::after {
+  opacity: 1;
+}
+
 .feature-card::before {
   content: '';
   position: absolute;
@@ -1686,8 +1817,8 @@ html {
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .feature-icon-wrapper {
@@ -1866,8 +1997,8 @@ html {
 }
 
 .team-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(30, 60, 114, 0.2);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 15px 35px rgba(30, 60, 114, 0.15);
 }
 
 .team-avatar {
@@ -3226,11 +3357,11 @@ html {
 }
 
 .resource-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-4px) scale(1.01);
   border-color: #61dafb;
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(97, 218, 251, 0.3),
+    0 15px 30px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(97, 218, 251, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
@@ -3715,8 +3846,8 @@ html {
   }
   
   .resource-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px) scale(1.005);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   }
   
   .resource-terminal-header {
@@ -4005,8 +4136,8 @@ html {
 
 .resource-item:hover {
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px) scale(1.005);
 }
 
 .resource-icon {
@@ -4133,8 +4264,8 @@ html {
 }
 
 .event-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(30, 60, 114, 0.2);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 15px 35px rgba(30, 60, 114, 0.15);
 }
 
 .live-indicator {
@@ -4448,7 +4579,8 @@ html {
 }
 
 .contact-info-card:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px) scale(1.005);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info-icon {

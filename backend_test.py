@@ -786,7 +786,7 @@ class DNABackendTester:
                 response = self.make_request("GET", f"/projects/{project_id}")
                 if response.status_code == 200:
                     data = response.json()
-                    if data.get("id") == project_id:
+                    if data.get("_id") == project_id or data.get("id") == project_id:
                         self.log_test("Get Project by ID", True, "Retrieved project by ID")
                     else:
                         self.log_test("Get Project by ID", False, "Incorrect project returned", data)

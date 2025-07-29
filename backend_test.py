@@ -287,7 +287,7 @@ class DNABackendTester:
                 response = self.make_request("GET", f"/users/{self.test_user_id}")
                 if response.status_code == 200:
                     data = response.json()
-                    if data.get("id") == self.test_user_id:
+                    if data.get("_id") == self.test_user_id or data.get("id") == self.test_user_id:
                         self.log_test("Get User by ID", True, "Retrieved user by ID")
                     else:
                         self.log_test("Get User by ID", False, "Incorrect user returned", data)

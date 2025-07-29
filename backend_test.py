@@ -687,7 +687,7 @@ class DNABackendTester:
         
         # Test unsubscribe
         try:
-            response = self.make_request("POST", "/newsletter/unsubscribe", {"email": test_email})
+            response = self.make_request("POST", f"/newsletter/unsubscribe?email={test_email}")
             if response.status_code == 200:
                 data = response.json()
                 if "message" in data:
